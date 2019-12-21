@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
 
+import com.example.easy.utils.AppUtils;
 import com.example.easy.utils.ImageLoaderUtil;
+import com.example.easy.utils.LogUtil;
 
 public class MainActivity extends AppCompatActivity {
     private ImageView img1,img2;
@@ -21,5 +23,12 @@ public class MainActivity extends AppCompatActivity {
 
         ImageLoaderUtil.loader(img1,R.drawable.ic_launcher_background);
         ImageLoaderUtil.loaderCircle(img2,R.drawable.ic_launcher_foreground);
+
+        LogUtil.e("打印的测试数据");
+        LogUtil.w("打印的测试数据");
+        LogUtil.d("打印的测试数据");
+        LogUtil.i("打印的测试数据");
+        LogUtil.v("打印的测试数据");
+        LogUtil.e(AppUtils.getAppName(this));
     }
 }
