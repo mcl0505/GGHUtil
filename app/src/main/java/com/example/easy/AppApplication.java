@@ -11,5 +11,7 @@ public class AppApplication extends Application {
         super.onCreate();
         getInstance = this;
         context = this;
+        AppConfig.init(context);
+
     }
 }

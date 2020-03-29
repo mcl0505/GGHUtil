@@ -20,9 +20,6 @@ public class UtilDoc {
     Context context;
     private void test(){
 
-        LogUtil.e("测试打印");
-        AppUtils.getAppName(context);
-
     }
 
 

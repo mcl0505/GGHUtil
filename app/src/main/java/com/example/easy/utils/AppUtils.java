@@ -18,10 +18,16 @@ import android.graphics.drawable.Drawable;
  */
 public class AppUtils {
 
+    private static Context context;
+
+    public static void init(Context mContext){
+        context = mContext;
+    }
+
     /**
      * 获取应用程序名称
      */
-    public static synchronized String getAppName(Context context) {
+    public static synchronized String getAppName() {
         try {
             PackageManager packageManager = context.getPackageManager();
             PackageInfo packageInfo = packageManager.getPackageInfo(
@@ -36,10 +42,9 @@ public class AppUtils {
 
     /**
      * [获取应用程序版本名称信息]
-     * @param context
      * @return 当前应用的版本名称
      */
-    public static synchronized String getVersionName(Context context) {
+    public static synchronized String getVersionName() {
         try {
             PackageManager packageManager = context.getPackageManager();
             PackageInfo packageInfo = packageManager.getPackageInfo(
@@ -54,10 +59,9 @@ public class AppUtils {
 
     /**
      * [获取应用程序版本号信息]
-     * @param context
      * @return 当前应用的版本号
      */
-    public static synchronized int getVersionCode(Context context) {
+    public static synchronized int getVersionCode() {
         try {
             PackageManager packageManager = context.getPackageManager();
             PackageInfo packageInfo = packageManager.getPackageInfo(
@@ -72,10 +76,9 @@ public class AppUtils {
 
     /**
      * [获取应用程序包名]
-     * @param context
      * @return 当前应用的包名
      */
-    public static synchronized String getPackageName(Context context) {
+    public static synchronized String getPackageName() {
         try {
             PackageManager packageManager = context.getPackageManager();
             PackageInfo packageInfo = packageManager.getPackageInfo(
@@ -90,9 +93,8 @@ public class AppUtils {
 
     /**
      * 获取图标 bitmap
-     * @param context
      */
-    public static synchronized Bitmap getBitmap(Context context) {
+    public static synchronized Bitmap getBitmap() {
         PackageManager packageManager = null;
         ApplicationInfo applicationInfo = null;
         try {
